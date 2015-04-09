@@ -1,16 +1,27 @@
 FORMAT: 1A
-HOST: http://server.aouk.co.uk/c2c/v1
+HOST: http://server.aouk.co.uk
 
 # CEG to Core API
 
 C2C is a simple API allowing import Products.
 
+# Health [/health]
 
-# Import Products to Core [/products]
+## Health [GET]
+
++ Response 200 (application/json)
+
+        {
+            "status":"UP"
+        }
+
+# C2C Root [/c2c/v1]
+
+## Import Products to Core [/products]
 
 Allowing import many products to AO Core System
 
-## Import Products [POST]
+### Import Products [POST]
 
 + Request (application/json)
 
@@ -122,14 +133,14 @@ Allowing import many products to AO Core System
             "AA00001": "OK"
         }
         
-# Product [/product/{sku_num}]
+## Product [/product/{sku_num}]
 
 Retrive All Product Data
 
 + Parameters
     + sku_num (required, string, `AA000002`) ... Product ID
 
-## View a Product Detail [GET]
+### View a Product Detail [GET]
 
 + Response 200 (application/json)
 
