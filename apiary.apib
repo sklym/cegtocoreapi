@@ -83,11 +83,7 @@ Allowing import many products to AO Core System
                     "objectRules":[],
                     "fieldRules":[],
                     "objectTargetAction":"compare",
-                    "anchorActionOnChange":"flag",
-                    "comparePriorityLevel":5,
-                    "embargoDate":"11/03/2015",
-                    "embargoTime":"11:00:00",
-                    "dataSource":"GTA"
+                    "anchorActionOnChange":"flag"
                 },
                 "copyRules":{
                     "objectRules":[{
@@ -392,6 +388,21 @@ Retrive All Product Data
             "movies":null,
             "sounds":null}
 
+# Group Description of the Properties
 
+# objectTargetAction 
+- **compare**: 
+- **live**: directly to Table (without placing in Comparison);
+- **force**: places it in Comparison Directly (even without real comparison between DB's version)
+- **retrospective**: takes value from Live (real ) Table value puts in Comparison
+    when new value will be placed in Live Table. So at the result you will have;
+    Live : value = new from Feed
+    Comparison: value = old value from Live. 
+- **ignore**: does nothing.
 
+##examples:
+`"defaultRules":{ "skuRules":{"objectTargetAction":"compare"}}`
 
+# anchorActionOnChange
+- **flag**
+- **no_flag**
